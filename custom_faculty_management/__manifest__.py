@@ -13,9 +13,11 @@
     """,
     'author': 'UPM Team',
     'depends': [
+        'base', 
+        'mail',
         'openeducat_core',          
         'contacts',                 
-        'hr',                      
+        'hr',    
     ],
     'data': [
         'security/ir.model.access.csv',
