@@ -1,0 +1,12 @@
+name: Deploy custom_faculty_management to Odoo VM
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, Linux, X64]
+    steps:
+      - name: Deploy custom_faculty_management on VM
+        run: /usr/local/bin/deploy_faculty_management.sh
