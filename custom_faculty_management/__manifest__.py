@@ -6,7 +6,6 @@
     'description': """
         Ajoute les fonctionnalités suivantes :
         - Grades des enseignants (op.grade)
-        - Établissements d'origine (op.institution)
         - Champs marocains : CNSS, SOME, RIB, noms en arabe
         - Contrats des enseignants par année universitaire (grade, statut, école)
         - Affectations pédagogiques (module/élément)
@@ -16,13 +15,12 @@
     'depends': [
         'openeducat_core',          
         'contacts',                 
-        'hr', 
+        'hr',                      
     ],
     'data': [
         'security/ir.model.access.csv',
         'data/sequence_data.xml',
         'views/op_grade_views.xml',
-        'views/op_institution_views.xml',
         'views/faculty_contract_views.xml',
         'views/faculty_assignment_views.xml',
         'views/op_faculty_views.xml',
