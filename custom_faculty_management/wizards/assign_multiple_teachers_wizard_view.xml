@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_assign_multiple_teachers_wizard" model="ir.ui.view">
+        <field name="name">assign.multiple.teachers.wizard.form</field>
+        <field name="model">assign.multiple.teachers.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Assigner plusieurs enseignants">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="annee_id" widget="selection"/>
+                            <field name="ecole_id"/>
+                            <field name="niveau_id"/>
+                            <field name="semestre_id"/>
+                        </group>
+                        <group>
+                            <field name="classe_id" invisible="1"/> 
+                            <field name="module_id"/>
+                            <field name="element_id"/>
+                            <field name="role"/>
+                            <field name="volume_horaire"/>
+                        </group>
+                    </group>
+                    <group string="Enseignants à affecter">
+                        <field name="faculty_ids" widget="many2many_tags"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_assign" string="Affecter" type="object" class="btn-primary"/>
+                    <button special="cancel" string="Annuler"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_assign_multiple_teachers" model="ir.actions.act_window">
+        <field name="name">Assigner plusieurs enseignants</field>
+        <field name="res_model">assign.multiple.teachers.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

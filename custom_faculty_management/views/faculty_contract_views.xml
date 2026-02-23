@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_faculty_contract_tree" model="ir.ui.view">
+        <field name="name">faculty.contract.tree</field>
+        <field name="model">faculty.contract</field>
+        <field name="arch" type="xml">
+            <tree string="Contrats par année" editable="bottom">
+                <field name="faculty_id"/>
+                <field name="annee_id"/>
+                <field name="ecole_id"/>
+                <field name="filiere_id"/>
+                <field name="grade_id"/>
+                <field name="status"/>
+                <field name="is_primary"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_faculty_contract_form" model="ir.ui.view">
+        <field name="name">faculty.contract.form</field>
+        <field name="model">faculty.contract</field>
+        <field name="arch" type="xml">
+            <form string="Contrat">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="faculty_id"/>
+                            <field name="annee_id"/>
+                            <field name="ecole_id"/>
+                            <field name="filiere_id"/>
+                        </group>
+                        <group>
+                            <field name="department_id"/>
+                            <field name="grade_id"/>
+                            <field name="status"/>
+                            <field name="is_primary"/>
+                        </group>
+                    </group>
+                    <group string="Période">
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_faculty_contract" model="ir.actions.act_window">
+        <field name="name">Contrats enseignants</field>
+        <field name="res_model">faculty.contract</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

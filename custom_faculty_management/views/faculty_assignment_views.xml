@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_faculty_assignment_tree" model="ir.ui.view">
+        <field name="name">faculty.assignment.tree</field>
+        <field name="model">faculty.assignment</field>
+        <field name="arch" type="xml">
+            <tree string="Affectations pédagogiques">
+                <field name="faculty_id"/>
+                <field name="annee_id"/>
+                <field name="semestre_id"/>
+                <field name="module_id"/>
+                <field name="element_id"/>
+                <field name="role"/>
+                <field name="volume_horaire"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_faculty_assignment_form" model="ir.ui.view">
+        <field name="name">faculty.assignment.form</field>
+        <field name="model">faculty.assignment</field>
+        <field name="arch" type="xml">
+            <form string="Affectation">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="faculty_id"/>
+                            <field name="annee_id"/>
+                            <field name="semestre_id"/>
+                        </group>
+                        <group>
+                            <field name="module_id"/>
+                            <field name="element_id"/>
+                            <field name="role"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="volume_horaire"/>
+                        <field name="notes"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_faculty_assignment" model="ir.actions.act_window">
+        <field name="name">Affectations enseignants</field>
+        <field name="res_model">faculty.assignment</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_op_grade_tree" model="ir.ui.view">
+        <field name="name">op.grade.tree</field>
+        <field name="model">op.grade</field>
+        <field name="arch" type="xml">
+            <tree string="Grades" decoration-success="active">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="level"/>
+                <field name="faculty_count"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_op_grade_form" model="ir.ui.view">
+        <field name="name">op.grade.form</field>
+        <field name="model">op.grade</field>
+        <field name="arch" type="xml">
+            <form string="Grade">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="%(action_op_faculty)d" 
+                                type="action"
+                                class="oe_stat_button"
+                                icon="fa-users"
+                                context="{'search_default_grade_id': active_id}">
+                            <div class="o_stat_info">
+                                <field name="faculty_count"/>
+                                <span class="o_stat_text">Enseignants</span>
+                            </div>
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="sequence"/>
+                        </group>
+                        <group>
+                            <field name="level"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="description" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_op_grade_search" model="ir.ui.view">
+        <field name="name">op.grade.search</field>
+        <field name="model">op.grade</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="code"/>
+                <filter name="active" string="Actifs" domain="[('active','=',True)]"/>
+                <filter name="inactive" string="Inactifs" domain="[('active','=',False)]"/>
+                <group expand="0" string="Grouper par">
+                    <filter name="group_by_level" string="Niveau" context="{'group_by':'level'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_op_grade" model="ir.actions.act_window">
+        <field name="name">Grades</field>
+        <field name="res_model">op.grade</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Créer votre premier grade</p>
+        </field>
+    </record>
+</odoo>

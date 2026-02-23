@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_op_faculty_form_inherit" model="ir.ui.view">
+        <field name="name">op.faculty.form.inherit</field>
+        <field name="model">op.faculty</field>
+        <field name="inherit_id" ref="openeducat_core.view_op_faculty_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//header" position="inside">
+                <button name="%(action_assign_multiple_teachers)d"
+                        string="Assigner plusieurs"
+                        type="action"
+                        class="btn-secondary"/>
+            </xpath>
+
+            <xpath expr="//field[@name='first_name']/.." position="replace">
+                <group>
+                    <field name="first_name" string="Prénom*" required="1"/>
+                    <field name="last_name" string="Nom*" required="1"/>
+                    <field name="first_name_arabic" string="Prénom en arabe"/>
+                    <field name="last_name_arabic" string="Nom en arabe"/>
+                </group>
+            </xpath>
+
+            <xpath expr="//field[@name='birth_date']/.." position="after">
+                <group>
+                    <field name="faculty_code" string="Code enseignant*"/>
+                    <field name="nationality" string="Nationalité*"/>
+                    <field name="gender" string="Sexe*"/>
+                </group>
+                <group>
+                    <field name="email" string="Email"/>
+                    <field name="mobile" string="GSM"/>
+                </group>
+                <group>
+                    <field name="some_number" string="N° SOME"/>
+                    <field name="rib" string="RIB"/>
+                    <field name="cnss_number" string="N° CNSS"/>
+                </group>
+            </xpath>
+
+            <xpath expr="//notebook" position="inside">
+                <page string="Contrats par année" name="contracts">
+                    <field name="contract_ids" mode="tree,form">
+                        <tree editable="bottom">
+                            <field name="annee_id"/>
+                            <field name="ecole_id"/>
+                            <field name="filiere_id"/>
+                            <field name="grade_id"/>
+                            <field name="status"/>
+                            <field name="is_primary"/>
+                        </tree>
+                    </field>
+                </page>
+                <page string="Enseignements" name="assignments">
+                    <field name="assignment_ids">
+                        <tree>
+                            <field name="annee_id"/>
+                            <field name="semestre_id"/>
+                            <field name="module_id"/>
+                            <field name="element_id"/>
+                            <field name="role"/>
+                            <field name="volume_horaire"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>
