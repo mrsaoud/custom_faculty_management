@@ -17,7 +17,6 @@
         'mail',
         'openeducat_core',          
         'contacts',                 
-        'hr',    
     ],
     'data': [
         'security/ir.model.access.csv',
