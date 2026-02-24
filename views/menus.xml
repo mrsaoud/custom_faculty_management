@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- This creates the main app icon in the dashboard -->
+    <!-- Main app menu -->
     <menuitem id="menu_faculty_management_root"
               name="Gestion des Enseignants"
               sequence="15"
-              web_icon="custom_faculty_management,static/description/teacher.png"
-              groups="base.group_user"/>
+              web_icon="custom_faculty_management,static/description/icon.png"/>
 
-    <!-- Your main menu items - these appear AFTER clicking the app -->
-    <menuitem id="menu_faculty_dashboard"
-              name="Tableau de bord"
+    <!-- Faculty/Professors - MAIN MENU ITEM -->
+    <menuitem id="menu_op_faculty"
+              name="Enseignants"
               parent="custom_faculty_management.menu_faculty_management_root"
+              action="action_op_faculty"
               sequence="5"/>
 
     <!-- Configuration submenu -->
@@ -19,44 +19,34 @@
               parent="custom_faculty_management.menu_faculty_management_root"
               sequence="10"/>
 
-    <!-- Grades under Configuration -->
     <menuitem id="menu_op_grade"
               name="Grades"
               parent="custom_faculty_management.menu_faculty_config"
               action="action_op_grade"
               sequence="10"/>
 
-    <!-- Institutions under Configuration -->
     <menuitem id="menu_op_institution"
               name="Établissements d'origine"
               parent="custom_faculty_management.menu_faculty_config"
               action="action_op_institution"
               sequence="20"/>
 
-    <!-- Main operations menu -->
-    <menuitem id="menu_faculty_operations"
-              name="Opérations"
-              parent="custom_faculty_management.menu_faculty_management_root"
-              sequence="20"/>
-
-    <!-- Contracts under Operations -->
+    <!-- Contracts and Assignments -->
     <menuitem id="menu_faculty_contract"
               name="Contrats enseignants"
-              parent="custom_faculty_management.menu_faculty_operations"
+              parent="custom_faculty_management.menu_faculty_management_root"
               action="action_faculty_contract"
-              sequence="10"/>
-
-    <!-- Assignments under Operations -->
-    <menuitem id="menu_faculty_assignment"
-              name="Affectations pédagogiques"
-              parent="custom_faculty_management.menu_faculty_operations"
-              action="action_faculty_assignment"
               sequence="20"/>
 
-    <!-- Wizards under Operations -->
+    <menuitem id="menu_faculty_assignment"
+              name="Affectations pédagogiques"
+              parent="custom_faculty_management.menu_faculty_management_root"
+              action="action_faculty_assignment"
+              sequence="30"/>
+
     <menuitem id="menu_assign_multiple_teachers"
               name="Assigner plusieurs enseignants"
-              parent="custom_faculty_management.menu_faculty_operations"
+              parent="custom_faculty_management.menu_faculty_management_root"
               action="action_assign_multiple_teachers"
-              sequence="30"/>
+              sequence="40"/>
 </odoo>
