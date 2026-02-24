@@ -22,7 +22,12 @@
             <form string="Grade">
                 <sheet>
                     <div class="oe_button_box" name="button_box">
-                        <button name="%(action_op_faculty)d" 
+                        <!-- <button name="%(action_op_faculty)d" 
+                                type="action"
+                                class="oe_stat_button"
+                                icon="fa-users"
+                                context="{'search_default_grade_id': active_id}"> -->
+                        <button name="%(user-management-custom-main.action_user_management_faculty)d"
                                 type="action"
                                 class="oe_stat_button"
                                 icon="fa-users"
