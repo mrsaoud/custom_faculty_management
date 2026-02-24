@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <menuitem id="menu_faculty_management_root"
+              name="Gestion des Enseignants"
+              sequence="15"
+              web_icon="custom_faculty_management,static/description/icon.png"/>
+
     <menuitem id="menu_op_grade"
               name="Grades"
-              parent="openeducat_core.menu_op_faculty_main" 
+              parent="custom_faculty_management.menu_faculty_management_root"
               action="action_op_grade"
-              sequence="20"/>
+              sequence="10"/>
 
     <menuitem id="menu_op_institution"
               name="Établissements d'origine"
-              parent="openeducat_core.menu_op_faculty_main"   
+              parent="custom_faculty_management.menu_faculty_management_root"
               action="action_op_institution"
-              sequence="30"/>
+              sequence="20"/>
 
     <menuitem id="menu_faculty_contract"
               name="Contrats enseignants"
-              parent="openeducat_core.menu_op_faculty_main"  
+              parent="custom_faculty_management.menu_faculty_management_root"
               action="action_faculty_contract"
-              sequence="40"/>
+              sequence="30"/>
 
     <menuitem id="menu_faculty_assignment"
               name="Affectations pédagogiques"
-              parent="openeducat_core.menu_op_faculty_main"
+              parent="custom_faculty_management.menu_faculty_management_root"
               action="action_faculty_assignment"
-              sequence="50"/>
+              sequence="40"/>
 
     <menuitem id="menu_assign_multiple_teachers"
               name="Assigner plusieurs enseignants"
-              parent="openeducat_core.menu_op_faculty_main"
+              parent="custom_faculty_management.menu_faculty_management_root"
               action="action_assign_multiple_teachers"
-              sequence="60"/>
+              sequence="50"/>
 </odoo>
