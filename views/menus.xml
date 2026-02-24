@@ -2,31 +2,31 @@
 <odoo>
     <menuitem id="menu_op_grade"
               name="Grades"
-              parent="openeducat_core.menu_faculty_root"
+              parent="openeducat_core.menu_op_faculty_main" 
               action="action_op_grade"
               sequence="20"/>
 
     <menuitem id="menu_op_institution"
               name="Établissements d'origine"
-              parent="openeducat_core.menu_faculty_root"
+              parent="openeducat_core.menu_op_faculty_main"   
               action="action_op_institution"
               sequence="30"/>
 
     <menuitem id="menu_faculty_contract"
               name="Contrats enseignants"
-              parent="openeducat_core.menu_faculty_root"
+              parent="openeducat_core.menu_op_faculty_main"  
               action="action_faculty_contract"
               sequence="40"/>
 
     <menuitem id="menu_faculty_assignment"
               name="Affectations pédagogiques"
-              parent="openeducat_core.menu_faculty_root"
+              parent="openeducat_core.menu_op_faculty_main"
               action="action_faculty_assignment"
               sequence="50"/>
 
     <menuitem id="menu_assign_multiple_teachers"
               name="Assigner plusieurs enseignants"
-              parent="openeducat_core.menu_faculty_root"
+              parent="openeducat_core.menu_op_faculty_main"
               action="action_assign_multiple_teachers"
               sequence="60"/>
 </odoo>
