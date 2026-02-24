@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Tree View -->
-    <record id="view_op_institution_tree" model="ir.ui.view">
-        <field name="name">op.institution.tree</field>
+    <!-- List View -->
+    <record id="view_op_institution_list" model="ir.ui.view">
+        <field name="name">op.institution.list</field>
         <field name="model">op.institution</field>
         <field name="arch" type="xml">
-            <tree string="Institutions">
+            <list string="Institutions">
                 <field name="name"/>
                 <field name="code"/>
+                <field name="type"/>
                 <field name="country_id"/>
                 <field name="city"/>
-            </tree>
+                <field name="active"/>
+            </list>
         </field>
     </record>
 
@@ -22,14 +24,16 @@
             <form string="Institution">
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="code"/>
-                        <field name="country_id"/>
-                        <field name="city"/>
-                        <field name="address"/>
-                        <field name="phone"/>
-                        <field name="email"/>
-                        <field name="website"/>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="type"/>
+                            <field name="country_id"/>
+                            <field name="city"/>
+                        </group>
+                        <group>
+                            <field name="active"/>
+                        </group>
                     </group>
                 </sheet>
             </form>
@@ -45,7 +49,17 @@
                 <field name="name"/>
                 <field name="code"/>
                 <field name="city"/>
-                <filter name="active" string="Active" domain="[('active','=',True)]"/>
+                <filter name="active" string="Actif" domain="[('active','=',True)]"/>
+                <filter name="inactive" string="Inactif" domain="[('active','=',False)]"/>
+                <separator/>
+                <filter name="university" string="Université" domain="[('type','=','university')]"/>
+                <filter name="school" string="École" domain="[('type','=','school')]"/>
+                <filter name="institute" string="Institut" domain="[('type','=','institute')]"/>
+                <filter name="company" string="Entreprise" domain="[('type','=','company')]"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_type" string="Type" context="{'group_by':'type'}"/>
+                    <filter name="group_country" string="Pays" context="{'group_by':'country_id'}"/>
+                </group>
             </search>
         </field>
     </record>
@@ -54,10 +68,10 @@
     <record id="action_op_institution" model="ir.actions.act_window">
         <field name="name">Institutions</field>
         <field name="res_model">op.institution</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Create your first institution
+                Créez votre premier établissement
             </p>
         </field>
     </record>
