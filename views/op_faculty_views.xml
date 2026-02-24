@@ -41,27 +41,28 @@
 
             <xpath expr="//notebook" position="inside">
                 <page string="Contrats par année" name="contracts">
-                    <field name="contract_ids" mode="tree,form">
-                        <tree editable="bottom">
+                    <field name="contract_ids" mode="list,form">
+                        <list editable="bottom">
                             <field name="annee_id"/>
                             <field name="ecole_id"/>
                             <field name="filiere_id"/>
                             <field name="grade_id"/>
                             <field name="status"/>
                             <field name="is_primary"/>
-                        </tree>
+                        </list>
                     </field>
                 </page>
+
                 <page string="Enseignements" name="assignments">
-                    <field name="assignment_ids">
-                        <tree>
+                    <field name="assignment_ids" mode="list,form">
+                        <list>
                             <field name="annee_id"/>
                             <field name="semestre_id"/>
                             <field name="module_id"/>
                             <field name="element_id"/>
                             <field name="role"/>
                             <field name="volume_horaire"/>
-                        </tree>
+                        </list>
                     </field>
                 </page>
             </xpath>

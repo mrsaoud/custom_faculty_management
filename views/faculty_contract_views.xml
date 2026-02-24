@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_faculty_contract_tree" model="ir.ui.view">
-        <field name="name">faculty.contract.tree</field>
+
+    <record id="view_faculty_contract_list" model="ir.ui.view">
+        <field name="name">faculty.contract.list</field>
         <field name="model">faculty.contract</field>
         <field name="arch" type="xml">
-            <tree string="Contrats par année" editable="bottom">
+            <list string="Contrats par année" editable="bottom">
                 <field name="faculty_id"/>
                 <field name="annee_id"/>
                 <field name="ecole_id"/>
@@ -14,7 +15,7 @@
                 <field name="is_primary"/>
                 <field name="start_date"/>
                 <field name="end_date"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -50,6 +51,7 @@
     <record id="action_faculty_contract" model="ir.actions.act_window">
         <field name="name">Contrats enseignants</field>
         <field name="res_model">faculty.contract</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
+
 </odoo>

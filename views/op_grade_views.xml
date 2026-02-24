@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_op_grade_tree" model="ir.ui.view">
-        <field name="name">op.grade.tree</field>
+    <record id="view_op_grade_list" model="ir.ui.view">
+        <field name="name">op.grade.list</field>
         <field name="model">op.grade</field>
         <field name="arch" type="xml">
-            <tree string="Grades" decoration-success="active">
+            <list string="Grades" decoration-success="active">
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="code"/>
                 <field name="level"/>
                 <field name="faculty_count"/>
                 <field name="active"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -71,7 +71,7 @@
     <record id="action_op_grade" model="ir.actions.act_window">
         <field name="name">Grades</field>
         <field name="res_model">op.grade</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">Créer votre premier grade</p>
         </field>
