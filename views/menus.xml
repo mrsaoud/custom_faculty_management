@@ -2,13 +2,13 @@
 <odoo>
     <menuitem id="menu_op_grade"
               name="Grades"
-              parent="openeducat_core.menu_faculty_config"
+              parent="openeducat_core.menu_faculty_root"
               action="action_op_grade"
               sequence="20"/>
 
     <menuitem id="menu_op_institution"
               name="Établissements d'origine"
-              parent="openeducat_core.menu_faculty_config"
+              parent="openeducat_core.menu_faculty_root"
               action="action_op_institution"
               sequence="30"/>
 
