@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_op_institution_tree" model="ir.ui.view">
+        <field name="name">op.institution.tree</field>
+        <field name="model">op.institution</field>
+        <field name="arch" type="xml">
+            <tree string="Institutions">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="country_id"/>
+                <field name="city"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_op_institution_form" model="ir.ui.view">
+        <field name="name">op.institution.form</field>
+        <field name="model">op.institution</field>
+        <field name="arch" type="xml">
+            <form string="Institution">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="country_id"/>
+                        <field name="city"/>
+                        <field name="address"/>
+                        <field name="phone"/>
+                        <field name="email"/>
+                        <field name="website"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_op_institution_search" model="ir.ui.view">
+        <field name="name">op.institution.search</field>
+        <field name="model">op.institution</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="city"/>
+                <filter name="active" string="Active" domain="[('active','=',True)]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_op_institution" model="ir.actions.act_window">
+        <field name="name">Institutions</field>
+        <field name="res_model">op.institution</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first institution
+            </p>
+        </field>
+    </record>
+</odoo>

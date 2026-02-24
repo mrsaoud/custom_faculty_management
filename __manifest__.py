@@ -23,6 +23,7 @@
         'security/ir.model.access.csv',
         'data/sequence_data.xml',
         'views/op_grade_views.xml',
+        'views/op_institution_views.xml',
         'views/faculty_contract_views.xml',
         'views/faculty_assignment_views.xml',
         'wizards/assign_multiple_teachers_wizard_view.xml',  
