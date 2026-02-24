@@ -4,7 +4,7 @@
     <menuitem id="menu_faculty_management_root"
               name="Gestion des Enseignants"
               sequence="15"
-              web_icon="custom_faculty_management,static/description/icon.png"
+              web_icon="custom_faculty_management,static/description/teacher.png"
               groups="base.group_user"/>
 
     <!-- Your main menu items - these appear AFTER clicking the app -->
