@@ -68,12 +68,12 @@
         </field>
     </record>
 
-    <record id="action_op_grade" model="ir.actions.act_window">
+    <!-- <record id="action_op_grade" model="ir.actions.act_window">
         <field name="name">Grades</field>
         <field name="res_model">op.grade</field>
         <field name="view_mode">list,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">Créer votre premier grade</p>
         </field>
-    </record>
+    </record> -->
 </odoo>

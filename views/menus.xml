@@ -19,11 +19,11 @@
               parent="custom_faculty_management.menu_faculty_management_root"
               sequence="10"/>
 
-    <menuitem id="menu_op_grade"
+    <!-- <menuitem id="menu_op_grade"
               name="Grades"
               parent="custom_faculty_management.menu_faculty_config"
               action="action_op_grade"
-              sequence="10"/>
+              sequence="10"/> -->
 
     <menuitem id="menu_op_institution"
               name="Établissements d'origine"
